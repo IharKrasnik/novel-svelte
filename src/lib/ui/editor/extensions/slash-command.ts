@@ -1,5 +1,6 @@
 import { Editor, Extension, type Range } from '@tiptap/core';
 import Suggestion from '@tiptap/suggestion';
+import { mount, unmount } from 'svelte';
 
 import tippy from 'tippy.js';
 
@@ -218,7 +219,7 @@ const renderItems = () => {
 
 			// component.dom;
 			const el = document.createElement('div');
-			component = new CommandList({
+			component = mount(CommandList, {
 				target: el,
 				props: props as any
 			});
@@ -253,7 +254,7 @@ const renderItems = () => {
 		onExit: () => {
 			popup?.[0].destroy();
 			// component?.destroy();
-			component?.$destroy();
+			unmount(component);
 		}
 	};
 };

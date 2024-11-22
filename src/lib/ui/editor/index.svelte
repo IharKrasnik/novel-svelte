@@ -74,10 +74,6 @@
   	/**
 	 * The editor instance. Bind to it to get access to the editor.
 	 * @example
-	 * <script lang="ts">
-	 * 	import { type EditorType, Editor } from 'novel-svelte';
-	 * 	let editor: EditorType;
-	 * </script>
 	 * 
 	 * <Editor bind:editor />
 	 */
